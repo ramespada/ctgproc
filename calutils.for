@@ -2717,7 +2717,7 @@ c --- Extract input month, day and year
          read(sdate(1:2),'(i2)') iday
          read(sdate(4:6),'(3a1)') amon
          read(sdate(8:11),'(i4)') iyear
-         call ALLCAP(amon,3)
+         !call ALLCAP(amon,3)
          amon3=amon(1)//amon(2)//amon(3)
          imon=0
          do k=1,12
@@ -2727,7 +2727,7 @@ c --- Extract input month, day and year
          read(sdate(1:3),'(3a1)') amon
          read(sdate(5:6),'(i2)') iday
          read(sdate(8:11),'(i4)') iyear
-         call ALLCAP(amon,3)
+         !call ALLCAP(amon,3)
          amon3=amon(1)//amon(2)//amon(3)
          imon=0
          do k=1,12

@@ -12,7 +12,7 @@ c-----------------------------------------------------------------------
      &                 lmarswap,lmarfill,iocean,
      &                 ndbf,iglazr(mxfil),ithres,lulc(mxfil),
      &                 meshctg,meshglaz,meshcorn,lqacell,lsnow,
-     &                 lutm,llcc,lps,lem,llaza,lttm,lacea,
+     &                 lutm,llcc,lps,lem,llaza,lttm,lacea,lll,
      &                 pmap,dctg,dusgsla,dnzgen,dnlcd,dcorine,dglc2k,
      &                 dumdglc,dmodis,dwvs,dwdbii,dgeneric
 

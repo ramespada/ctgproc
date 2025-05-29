@@ -585,7 +585,7 @@ c --- LUTABS common block
      9            61,62,7*0/
       data nlcd01/10*0,
      1            52,91,8*0,
-     2            30,11,11,13,6*0,
+     2            31,11,11,13,6*0,
      3            74,72,8*0,
      4            41,42,43,7*0,
      5            32,32,8*0,
@@ -2164,9 +2164,11 @@ c --- Open Input Data File
          if(ierr.NE.0) call OPEN_ERR(iolst,'COMP','DATA File',
      &                               luindat(kf),ioinp)
       else
-         open(ioinp,file=luindat(kf), status='old',form=cform,
-     1        access=caccess, recl=irecl, iostat=ierr)
-         if(ierr.NE.0) call OPEN_ERR(iolst,'COMP','DATA File',
+       print*,"here i touched something..",luindat(kf)
+       open(unit=ioinp, file=trim(luindat(kf)), form='UNFORMATTED', 
+     1  action='READ',status='OLD',access='DIRECT', recl=1,iostat=ierr)
+
+       if(ierr.NE.0) call OPEN_ERR(iolst,'COMP','DATA File',
      &                               luindat(kf),ioinp)
       endif
 
@@ -4914,7 +4916,7 @@ c --- XYUNIT
 c --- More added after dataset version 2.0
 c --- Protect array space for now
       ncat=MIN(nluoutcat,mxcat)
-      read(dataver,'(f)') rver
+      read(dataver,'(f10.5)') rver
       if(rver.GT.2.01) then
          read(io,*) (luoutcat(n),n=1,ncat)
       else
